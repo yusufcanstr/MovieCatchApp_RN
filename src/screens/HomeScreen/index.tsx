@@ -12,11 +12,13 @@ import PopularMovieItem from "../../components/PopularMovieItem";
 import RecentMovieItem from "../../components/RecentMovieItem";
 import popularMovieList from "../../../assets/popularMovieList";
 import { Movie } from "../../models";
+import recentMovieList from "../../../assets/recentMovieList";
 
 const { width, height } = Dimensions.get("window");
 
 export default function index() {
   const [movieList, setMovieList] = useState<Movie[]>(popularMovieList);
+  const [recentList, setRecentList] = useState<Movie[]>(recentMovieList)
 
   return (
     <ScrollView style={{ backgroundColor: "#070420" }}>
@@ -67,7 +69,7 @@ export default function index() {
       </View>
 
       <View>
-        {movieList.map((item, index) => (
+        {recentList.map((item, index) => (
           <RecentMovieItem key={index} item={item} />
         ))}
       </View>

@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { FontAwesome } from '@expo/vector-icons';
+import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import HomeNavigator from "../navigators/HomeNavigator";
 import FavoriteScreen from "../screens/FavoriteScreen";
 import ProfileScreen from "../screens/ProfileScreen";
@@ -63,7 +63,7 @@ export default function RootNavigator() {
         component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <MaterialIcons name="settings" size={28} color={color} />
+            <FontAwesome5 name="user-alt" size={24} color={color} />
           ),
         }}
       />
