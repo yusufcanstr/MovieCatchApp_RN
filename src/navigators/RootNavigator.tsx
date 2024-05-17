@@ -1,9 +1,12 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { FontAwesome } from '@expo/vector-icons';
 import HomeNavigator from "../navigators/HomeNavigator";
 import FavoriteScreen from "../screens/FavoriteScreen";
-import SettingsScreen from "../screens/SettingsScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import SearchScreen  from "../screens/SearchScreen";
+
 import {
   Entypo,
   MaterialIcons,
@@ -38,6 +41,15 @@ export default function RootNavigator() {
         }}
       />
       <Tab.Screen
+        name="Search"
+        component={SearchScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <FontAwesome name="search" size={28} color={color} />
+          ),
+        }}
+      />
+      <Tab.Screen
         name="Favorite"
         component={FavoriteScreen}
         options={{
@@ -47,8 +59,8 @@ export default function RootNavigator() {
         }}
       />
       <Tab.Screen
-        name="Settings"
-        component={SettingsScreen}
+        name="Profile"
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <MaterialIcons name="settings" size={28} color={color} />
