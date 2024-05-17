@@ -1,10 +1,13 @@
-import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, Dimensions } from 'react-native'
+import React from 'react';
+import ProfileHeader from "../../components/ProfileHeader";
+
+const { width, height } = Dimensions.get("window");
 
 export default function index() {
   return (
     <View>
-      <Text>Settings Screen</Text>
+      <ProfileHeader/>
     </View>
   )
 }
