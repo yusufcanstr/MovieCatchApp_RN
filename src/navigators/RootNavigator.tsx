@@ -19,11 +19,12 @@ export default function RootNavigator() {
     screenOptions={{
       tabBarHideOnKeyboard: true,
       tabBarShowLabel: false,
-      tabBarInactiveTintColor: "#959595",
-      tabBarActiveTintColor:"#0881A3",
+      tabBarInactiveTintColor: "#89889B",
+      tabBarActiveTintColor:"#ffffff",
       headerShown: false,
       tabBarStyle: {
         height: 60,
+        backgroundColor:"#24223B",
       },
     }}
     >
