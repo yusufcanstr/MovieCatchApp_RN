@@ -18,9 +18,9 @@ const styles = StyleSheet.create({
     image: {
         borderWidth:4,
         borderColor:"#2D2D44",
-        width:width*0.45,
-        height:width*0.45,
-        borderRadius:width*0.225,
+        width:width*0.40,
+        height:width*0.40,
+        borderRadius:width*0.2,
         marginTop:30,
     },
     txtSave: {
