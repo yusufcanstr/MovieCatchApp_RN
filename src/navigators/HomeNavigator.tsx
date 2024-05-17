@@ -26,10 +26,10 @@ function MyStack() {
         name="Home"
         component={HomeScreen}
         options={{
-          headerStyle: { backgroundColor: "#f9f9f9" },
+          headerStyle: { backgroundColor: "#23243D" },
           headerTitle: () => (
             <Text
-              style={{ fontSize: 19, fontWeight: "bold", color: "#0881A3" }}
+              style={{ fontSize: 19, fontWeight: "bold", color: "#E10D32" }}
             >
               🍿Movie Catch
             </Text>
@@ -37,7 +37,7 @@ function MyStack() {
           headerRight: () => (
             //HomeScreen go to SearchScreen
             <TouchableOpacity> 
-              <AntDesign name="search1" size={24} color="#0881A3" />
+              <AntDesign name="search1" size={28} color="#E10D32" />
             </TouchableOpacity>
           ),
         }}
