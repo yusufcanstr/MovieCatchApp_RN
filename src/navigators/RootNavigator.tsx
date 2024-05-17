@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import HomeScreen from "../screens/HomeScreen";
+import HomeNavigator from "../navigators/HomeNavigator";
 import FavoriteScreen from "../screens/FavoriteScreen";
 import SettingsScreen from "../screens/SettingsScreen";
 import {
@@ -29,7 +29,7 @@ export default function RootNavigator() {
     >
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <Entypo name="home" size={30} color={color} />
