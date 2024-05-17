@@ -1,44 +1,77 @@
-import { StyleSheet, Text, View, ScrollView } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Dimensions,
+  TouchableOpacity,
+} from "react-native";
 import React, { useState } from "react";
 import { Entypo } from "@expo/vector-icons";
 import PopularMovieItem from "../../components/PopularMovieItem";
+import RecentMovieItem from "../../components/RecentMovieItem";
 import popularMovieList from "../../../assets/popularMovieList";
 import { Movie } from "../../models";
+
+const { width, height } = Dimensions.get("window");
 
 export default function index() {
   const [movieList, setMovieList] = useState<Movie[]>(popularMovieList);
 
   return (
-    <View style={{ flex: 1 , backgroundColor:"#070420"}}>
+    <ScrollView style={{ backgroundColor: "#070420" }}>
       <View
         style={{
           flexDirection: "row",
           justifyContent: "space-between",
           marginHorizontal: 10,
-          marginTop:10,
-          marginBottom:6
+          marginTop: 10,
+          marginBottom: 6,
         }}
       >
-        <Text style={{fontWeight:"600", color:"white"}}>Popular Movie</Text>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
-          <Text style={{color:"white"}}>See All</Text>
-          <Entypo name="chevron-small-right" size={24} color="#f9f9f9" />
-        </View>
+        <Text style={{ fontWeight: "600", color: "white" }}>Popular Movie</Text>
+        <TouchableOpacity>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={{ color: "white" }}>See All</Text>
+            <Entypo name="chevron-small-right" size={24} color="#f9f9f9" />
+          </View>
+        </TouchableOpacity>
       </View>
 
       <ScrollView
         horizontal={true}
         showsHorizontalScrollIndicator={false}
         bounces={true}
-        style={{ backgroundColor: "white" }}
       >
         {movieList.map((item, index) => (
           <PopularMovieItem key={index} item={item} />
         ))}
       </ScrollView>
 
-    
-    </View>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "space-between",
+          marginHorizontal: 10,
+          marginTop: 10,
+          marginBottom: 6,
+        }}
+      >
+        <Text style={{ fontWeight: "600", color: "white" }}>Recent Movie</Text>
+        <TouchableOpacity>
+          <View style={{ flexDirection: "row", alignItems: "center" }}>
+            <Text style={{ color: "white" }}>See All</Text>
+            <Entypo name="chevron-small-right" size={24} color="#f9f9f9" />
+          </View>
+        </TouchableOpacity>
+      </View>
+
+      <View>
+        {movieList.map((item, index) => (
+          <RecentMovieItem key={index} item={item} />
+        ))}
+      </View>
+    </ScrollView>
   );
 }
 
