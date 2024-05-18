@@ -1,10 +1,13 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import SearchBar from "../../components/SearchBar"
 
 export default function index() {
   return (
-    <View>
-      <Text>Search Screen</Text>
+    <View style={{backgroundColor:"#070420", flex:1}}>
+      <SearchBar/>
+ 
+
     </View>
   )
 }

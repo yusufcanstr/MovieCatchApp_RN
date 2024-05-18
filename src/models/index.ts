@@ -14,3 +14,8 @@ export declare class Movie {
   readonly vote_average: number;
   readonly vote_count: number;
 }
+
+export declare class Genres {
+  readonly id: number;
+  readonly name: string;
+}
