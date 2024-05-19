@@ -2,6 +2,7 @@ import { Dimensions, StyleSheet, View, TextInput } from "react-native";
 import React from "react";
 import { Feather } from "@expo/vector-icons";
 
+
 const { width, height } = Dimensions.get("window");
 export default function index() {
   return (
@@ -29,7 +30,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "#37364B",
     width: "92%",
-    marginVertical: width * 0.1,
+    marginTop: width * 0.1,
     marginHorizontal:10,
     paddingHorizontal: width * 0.03,
     alignItems: "center",
@@ -41,7 +42,7 @@ const styles = StyleSheet.create({
     textAlign: "left",
     fontSize: 16,
     color: "#f8f8f8",
-    fontWeight:"500",
+    fontWeight:"400",
     marginHorizontal: 16,
   },
 });
