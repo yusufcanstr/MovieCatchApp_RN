@@ -5,31 +5,26 @@ import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import HomeNavigator from "../navigators/HomeNavigator";
 import FavoriteNavigator from "../navigators/FavoriteNavigator";
 import ProfileScreen from "../screens/ProfileScreen";
-import SearchScreen  from "../screens/SearchScreen";
-
-import {
-  Entypo,
-  MaterialIcons,
-  AntDesign,
-} from "@expo/vector-icons";
+import SearchScreen from "../screens/SearchScreen";
+import { Entypo, AntDesign } from "@expo/vector-icons";
 
 const Tab = createBottomTabNavigator();
 
 export default function RootNavigator() {
   return (
     <Tab.Navigator
-    initialRouteName="Anasayfa"
-    screenOptions={{
-      tabBarHideOnKeyboard: true,
-      tabBarShowLabel: false,
-      tabBarInactiveTintColor: "#89889B",
-      tabBarActiveTintColor:"#ffffff",
-      headerShown: false,
-      tabBarStyle: {
-        height: 60,
-        backgroundColor:"#24223B",
-      },
-    }}
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarHideOnKeyboard: true,
+        tabBarShowLabel: false,
+        tabBarInactiveTintColor: "#89889B",
+        tabBarActiveTintColor: "#ffffff",
+        headerShown: false,
+        tabBarStyle: {
+          height: 70,
+          backgroundColor: "#24223B",
+        },
+      }}
     >
       <Tab.Screen
         name="Home"
