@@ -3,7 +3,7 @@ import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import HomeNavigator from "../navigators/HomeNavigator";
-import FavoriteScreen from "../screens/FavoriteScreen";
+import FavoriteNavigator from "../navigators/FavoriteNavigator";
 import ProfileScreen from "../screens/ProfileScreen";
 import SearchScreen  from "../screens/SearchScreen";
 
@@ -51,7 +51,7 @@ export default function RootNavigator() {
       />
       <Tab.Screen
         name="Favorite"
-        component={FavoriteScreen}
+        component={FavoriteNavigator}
         options={{
           tabBarIcon: ({ color }) => (
             <AntDesign name="heart" size={28} color={color} />

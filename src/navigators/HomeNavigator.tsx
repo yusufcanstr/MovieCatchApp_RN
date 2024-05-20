@@ -36,7 +36,7 @@ function MyStack() {
           ),
           headerRight: () => (
             //HomeScreen go to SearchScreen
-            <TouchableOpacity> 
+            <TouchableOpacity > 
               <AntDesign name="search1" size={28} color="#E10D32" />
             </TouchableOpacity>
           ),
