@@ -7,12 +7,15 @@ import {
   } from "react-native";
   import React from "react";
   import { Movie } from "../../models";
+  import { useNavigation } from "@react-navigation/native";
   
   const { width, height } = Dimensions.get("window");
   type movieItemType = {
     item: Movie;
   };
   export default function index({ item }: movieItemType) {
+    const navigation = useNavigation();
+
     return (
       <View
         style={{
@@ -25,7 +28,7 @@ import {
           backgroundColor: "#070420",
         }}
       >
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("MovieDetails", { movie: item })}>
           <Image
             style={{
               width: height * 0.12,

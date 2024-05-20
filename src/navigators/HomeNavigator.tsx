@@ -9,6 +9,7 @@ import {
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
+import MovieDetailsScreen from "../screens/MovieDetailsScreen";
 import { Ionicons, AntDesign } from "@expo/vector-icons";
 import {
   useNavigation,
@@ -18,7 +19,20 @@ import {
 const Stack = createNativeStackNavigator();
 const { width, height } = Dimensions.get("window");
 
-function MyStack() {
+function MyStack({ navigation, route }) {
+
+  const tabHiddenRoutes = ["MovieDetails"];
+
+  React.useLayoutEffect(() => {
+    const routeName = getFocusedRouteNameFromRoute(route);
+    console.log("routeName ->" + routeName);
+    if (tabHiddenRoutes.includes(routeName)) {
+      navigation.setOptions({ tabBarStyle: { display: "none" } });
+    } else {
+      navigation.setOptions({ tabBarStyle: { display: "true" } });
+    }
+  }, [navigation, route]);
+
   return (
     //HomeScreen
     <Stack.Navigator>
@@ -36,22 +50,25 @@ function MyStack() {
           ),
           headerRight: () => (
             //HomeScreen go to SearchScreen
-            <TouchableOpacity > 
+            <TouchableOpacity>
               <AntDesign name="search1" size={28} color="#E10D32" />
             </TouchableOpacity>
           ),
         }}
       />
+      <Stack.Screen 
+      name="MovieDetails" 
+      component={MovieDetailsScreen} 
+      options={{headerShown:false}}
+      />
     </Stack.Navigator>
-
-    //MovieDetails Screen
 
     //Search Screen
   );
 }
 
-export default function HomeNavigator() {
-  return <MyStack />;
+export default function HomeNavigator({ navigation, route }) {
+  return <MyStack navigation={navigation} route={route} />;
 }
 
 const styles = StyleSheet.create({});
